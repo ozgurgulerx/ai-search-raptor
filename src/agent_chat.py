@@ -101,7 +101,7 @@ async def chat_loop() -> None:
         sys.exit("❌ Missing Azure env vars. Check .env.")
 
     chat_client = AzureOpenAIChatClient(
-        model_id=chat_deploy,
+        deployment_name=chat_deploy,
         endpoint=aoai_endpoint,
         api_key=aoai_key,
         api_version=aoai_version,
@@ -130,23 +130,63 @@ async def chat_loop() -> None:
             continue
 
         emb = embed([question], endpoint=aoai_endpoint, deploy=embed_deploy, api_key=aoai_key, api_version=aoai_version)[0]
-        vector_payload = {
-            "vectorQueries": [
-                {"kind": "vector", "vector": emb, "fields": "contentVector", "k": 3}
-            ],
-            "select": "id,raw,doc_id",
-            "top": 3,
-            "search": question,  # hybrid: text + vector
-        }
+        # Ask for common RAPTOR fields when present; fallback handled below.
+        select_fields = ["id", "raw", "level", "kind", "doc_id"]
+        base_filters = []
         if doc_filter:
-            vector_payload["filter"] = f"doc_id eq '{doc_filter}'"
+            base_filters.append(f"doc_id eq '{doc_filter}'")
 
-        hits = http_post_json(
-            f"{search_endpoint}/indexes/{index_name}/docs/search?api-version=2024-07-01",
-            {"Content-Type": "application/json", "api-key": search_key},
-            vector_payload,
-            timeout=30,
-        ).get("value", [])
+        def run_search(extra_filter: str | None, k: int, top: int) -> list[dict]:
+            filters = list(base_filters)
+            if extra_filter:
+                filters.append(extra_filter)
+            vector_payload = {
+                "vectorQueries": [
+                    {"kind": "vector", "vector": emb, "fields": "contentVector", "k": k}
+                ],
+                "select": ",".join(select_fields),
+                "top": top,
+                "search": question,  # hybrid: text + vector
+            }
+            if filters:
+                vector_payload["filter"] = " and ".join(filters)
+            try:
+                return http_post_json(
+                    f"{search_endpoint}/indexes/{index_name}/docs/search?api-version=2024-07-01",
+                    {"Content-Type": "application/json", "api-key": search_key},
+                    vector_payload,
+                    timeout=30,
+                ).get("value", [])
+            except RuntimeError as e:
+                msg = str(e)
+                if "Could not find a property named 'doc_id'" in msg or "Could not find a property named 'level'" in msg:
+                    # Fallback for indexes without RAPTOR fields
+                    vector_payload.pop("filter", None)
+                    vector_payload["select"] = "id,raw"
+                    print("⚠️  Some fields missing in index; retrying search with id/raw only.")
+                    return http_post_json(
+                        f"{search_endpoint}/indexes/{index_name}/docs/search?api-version=2024-07-01",
+                        {"Content-Type": "application/json", "api-key": search_key},
+                        vector_payload,
+                        timeout=30,
+                    ).get("value", [])
+                raise
+
+        # For RAPTOR indexes, pull both summaries and leaves and merge (summaries first).
+        if "raptor" in index_name.lower():
+            summary_hits = run_search("level gt 0", k=5, top=5)
+            leaf_hits = run_search(None, k=5, top=5)
+            seen = set()
+            hits = []
+            for h in summary_hits + leaf_hits:
+                hid = h.get("id")
+                if hid in seen:
+                    continue
+                seen.add(hid)
+                hits.append(h)
+        else:
+            hits = run_search(None, k=10, top=10)
+        context_block = ""
         if not hits:
             context_block = "No relevant excerpts found."
             print("\n📄 Retrieved context: (none)\n")
@@ -155,7 +195,15 @@ async def chat_loop() -> None:
             for i, h in enumerate(hits, 1):
                 raw = h.get("raw", "")
                 snippet = textwrap.shorten(raw, 400) if raw else "(no raw text)"
-                parts.append(f"[Source {i}] id={h.get('id','')} \n{snippet}")
+                prefix_bits = [f"id={h.get('id','')}"]
+                if "level" in h:
+                    prefix_bits.append(f"level={h.get('level')}")
+                if "kind" in h:
+                    prefix_bits.append(f"kind={h.get('kind')}")
+                if "doc_id" in h:
+                    prefix_bits.append(f"doc_id={h.get('doc_id')}")
+                prefix = " ".join(prefix_bits)
+                parts.append(f"[Source {i}] {prefix} \n{snippet}")
             context_block = "\n\n".join(parts)
             print("\n📄 Retrieved context:\n")
             print(context_block)

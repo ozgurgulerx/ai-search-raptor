@@ -29,7 +29,6 @@ build/
 .vscode/
 
 # Data and model outputs
-data/
 !data/.gitkeep
 docu/
 

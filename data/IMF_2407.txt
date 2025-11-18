@@ -1,0 +1,1180 @@
+INTERNATIONAL MONETARY FUND
+
+WORLD
+ECONOMIC
+OUTLOOK
+UPDATE
+
+The Global Economy
+in a Sticky Spot
+
+2024
+
+JUL
+
+JAN
+JUL
+2024
+2024
+
+WORLD ECONOMIC
+ECONOMIC OUTLOOK
+OUTLOOK UPDATE
+UPDATE
+WORLD
+The Global Economy in a Sticky Spot
+
+2024 Global growth is projected to be in line with the April 2024 World Economic Outlook (WEO) forecast, at 3.2
+percent in 2024 and 3.3 percent in 2025. However, varied momentum in activity at the turn of the year has somewhat
+narrowed the output divergence across economies as cyclical factors wane and activity becomes better aligned with its
+potential. Services price inflation is holding up progress on disinflation, which is complicating monetary policy
+normalization. Upside risks to inflation have thus increased, raising the prospect of higher-for-even-longer interest rates,
+in the context of escalating trade tensions and increased policy uncertainty. To manage these risks and preserve growth,
+the policy mix should be sequenced carefully to achieve price stability and replenish diminished buffers.
+Global activity and world trade firmed up at the turn of the year, with trade spurred by strong exports
+from Asia, particularly in the technology sector. Relative to the April 2024 WEO, first quarter growth
+surprised on the upside in many countries, although downside surprises in Japan and the United
+States were notable. In the United States, after a sustained period of strong outperformance, a
+sharper-than-expected slowdown in growth reflected moderating consumption and a negative
+contribution from net trade. In Japan, the negative growth surprise stemmed from temporary supply
+disruptions linked to the shutdown of a major automobile plant in the first quarter. In contrast,
+shoots of economic recovery materialized in Europe, led by an improvement in services activity. In
+China, resurgent domestic consumption propelled the positive upside in the first quarter, aided by
+what looked to be a temporary surge in exports belatedly reconnecting with last year’s rise in global
+demand. These developments have narrowed the output divergences somewhat across economies, as
+cyclical factors wane and activity becomes better aligned with its potential.
+Meanwhile, the momentum on global disinflation
+Figure 1. Sequential Core Inflation
+is slowing, signaling bumps along the path. This (Percent; three-month-over-three-month, annualized)
+reflects different sectoral dynamics: the
+10
+persistence of higher-than-average inflation in
+Core goods
+Core services, excluding US
+8
+services prices, tempered to some extent by
+US core services
+stronger disinflation in the prices of goods
+6
+(Figure 1). Nominal wage growth remains brisk,
+above price inflation in some countries, partly
+4
+reflecting the outcome of wage negotiations
+2
+2015–19 averages
+earlier this year and short-term inflation
+expectations that remain above target. The
+0
+uptick in sequential inflation in the United
+States during the first quarter has delayed policy –2 Jan.
+Jan.
+Jan.
+Jan.
+Jan.
+Jan.
+May
+2018
+19
+20
+21
+22
+23
+24
+normalization. This has put other advanced
+economies, such as the euro area and Canada,
+Sources: Haver Analytics; and IMF staff calculations.
+Note: The two aggregates are the purchasing-power-parity-weighted averages.
+where underlying inflation is cooling more in
+Sample includes 11 advanced economies and 9 emerging market and developing
+line with expectations, ahead of the United
+economies that account for approximately 55 percent of 2021 world output at
+purchasing-power-parity weights.
+States in the easing cycle. At the same time, a
+number of central banks in emerging market economies remain cautious in regard to cutting rates
+owing to external risks triggered by changes in interest rate differentials and associated depreciation
+of those economies’ currencies against the dollar.
+International Monetary Fund | July 2024
+
+1
+
+WORLD ECONOMIC OUTLOOK UPDATE, JULY 2024
+
+Global financial conditions remain accommodative. Although longer-term yields have generally drifted
+upward, in tandem with the repricing of policy paths, buoyant corporate valuations have kept
+financial conditions accommodative, broadly at the level of the April WEO (see Box 1). The increase
+in yields is likely to put pressure on fiscal discipline, however, which in some countries is already
+strained by the inability to rein in spending or raise taxes.
+A Waxing and Waning Outlook
+IMF staff projections are based on upward revisions to commodity prices, including a rise in nonfuel
+prices by 5 percent in 2024. Energy commodity prices are expected to fall by about 4.6 percent in
+2024, less than projected in the April WEO, reflecting elevated oil prices from deep cuts by OPEC+
+(the Organization of the Petroleum Exporting Countries, including Russia and other non-OPEC oil
+exporters) and reduced, but still present, price pressure from the Middle East conflict. Monetary
+policy rates of major central banks are still expected to decline in the second half of 2024, with
+divergence in the pace of normalization reflecting varied inflation circumstances.
+Growth is expected to remain stable. At 3.2 percent in 2024 and 3.3 percent in 2025, the forecast for global
+economic growth is broadly unchanged from that in April (Table 1). Under the hood, however,
+offsetting growth revisions have shifted the composition.
+Among advanced economies, growth is expected to
+converge over the coming quarters (Figure 2).
+In the United States, projected growth is revised
+downward to 2.6 percent in 2024 (0.1
+percentage point lower than projected in April),
+reflecting the slower-than-expected start to the
+year. Growth is expected to slow to 1.9 percent
+in 2025 as the labor market cools and
+consumption moderates, with fiscal policy
+starting to tighten gradually. By the end of 2025,
+growth is projected to taper to potential, closing
+the positive output gap.
+
+Figure 2. Growth Revisions since April
+(Percent; solid = July 2024 WEO Update, dashed = April 2024 WEO)
+2023:Q1
+
+6
+
+23:Q3
+
+24:Q1
+
+24:Q3
+
+25:Q1
+
+US
+AEs excluding US
+
+5
+4
+
+3
+2
+1
+
+0
+–1
+2023:Q1
+
+23:Q3
+
+24:Q1
+
+24:Q3
+
+25:Q1
+
+25:
+
+Q4
+In the euro area, activity appears to have
+bottomed out. In line with the April 2024
+Source: IMF staff calculations.
+Note: Shaded areas denote projections. Data for 2024:Q2 are estimates. AEs =
+projection, a modest pickup of 0.9 percent is
+advanced economies; WEO = World Economic Outlook.
+expected for 2024 (an upward revision of 0.1
+percentage point), driven by stronger momentum in services and higher-than-expected net exports in
+the first half of the year; growth is projected to rise to 1.5 percent in 2025. This is underpinned by
+stronger consumption on the back of rising real wages, as well as higher investment from easing
+financing conditions amid gradual monetary policy loosening this year. Continued weaknesses in
+manufacturing suggest a more sluggish recovery in countries such as Germany.
+
+In Japan, the strong shunto wage settlement is expected to support a turnaround in private
+consumption starting in the second half. But the expectation for 2024 growth is revised downward by
+0.2 percentage point, with the downward adjustment largely reflecting temporary supply disruptions
+and weak private investment in the first quarter.
+The forecast for growth in emerging market and developing economies is revised upward; the projected
+increase is powered by stronger activity in Asia, particularly China and India. For China, the growth
+2
+
+International Monetary Fund | July 2024
+
+WORLD ECONOMIC OUTLOOK UPDATE, JULY 2024
+
+forecast is revised upward to 5 percent in 2024, primarily on account of a rebound in private
+consumption and strong exports in the first quarter. In 2025, GDP is projected to slow to 4.5
+percent, and to continue to decelerate over the medium term to 3.3 percent by 2029, because of
+headwinds from aging and slowing productivity growth. The forecast for growth in India has also
+been revised upward, to 7.0 percent, this year, with the change reflecting carryover from upward
+revisions to growth in 2023 and improved prospects for private consumption, particularly in rural
+areas.
+With regard to Latin America and the Caribbean, growth has been revised downward for 2024 in Brazil,
+reflecting the near-term impact of flooding, and in Mexico, due to moderation in demand. However,
+growth has been revised upwards in 2025 for Brazil to reflect reconstruction following the floods and
+supportive structural factors (for example, acceleration in hydrocarbon production). For the Middle
+East and Central Asia, oil production and regional conflicts continue to weigh on prospects. The
+growth forecast for 2024 in Saudi Arabia has been revised downward by 0.9 percentage point; the
+adjustment reflects mainly the extension of oil production cuts. Projected growth in Sudan is revised
+markedly downward, as persisting conflict takes a larger toll on the economy. The forecast for growth
+in sub-Saharan Africa is revised downward, mainly as a result of a 0.2 percentage point downward
+revision to the growth outlook in Nigeria amid weaker than expected activity in the first quarter of this
+year.
+Trade makes a recovery. World trade growth is expected to recover to about 3¼ percent annually in
+2024–25 (from quasi stagnation in 2023) and align with global GDP growth again. The uptick in the
+first quarter of this year is expected to moderate as manufacturing remains subdued. Although crossborder trade restrictions have surged, harming trade between geopolitically distant blocs, the global
+trade-to-GDP ratio is expected to remain stable in the projection.
+Global inflation will continue to decline. In advanced economies, the revised forecast is for the pace of
+disinflation to slow in 2024 and 2025. That is because inflation in prices for services is now expected
+to be more persistent and commodity prices higher. However, the gradual cooling of labor markets,
+together with an expected decline in energy prices, should bring headline inflation back to target by
+the end of 2025. Inflation is expected to remain higher in emerging market and developing economies
+(and to drop more slowly) than in advanced economies. However, partly thanks to falling energy
+prices, inflation is already close to prepandemic levels for the median emerging market and
+developing economy.
+Not Yet in the Clear
+Overall, risks to the outlook remain balanced, as in the April 2024 WEO, but some near-term risks
+have gained prominence. These include upside risks to inflation that stem from a lack of progress on
+services disinflation and price pressures emanating from renewed trade or geopolitical tensions. Risks
+of persistent inflation in the services sector are tied to both wage and price setting, given that labor
+accounts for a high share of the costs in that sector. Higher nominal wage growth, which in some
+cases reflects the catch-up of real wages, if accompanied by weak productivity, could make it difficult
+for firms to moderate price increases, especially when profit margins are already squeezed. This could
+lead to further stickiness in wage and price inflation. The escalation of trade tensions could further
+raise near-term risks to inflation by increasing the cost of imported goods along the supply chain.
+Bumpiness along the remaining disinflation path could destabilize the return to price stability if shortterm expectations spike upward as a result of disappointing inflation data.
+International Monetary Fund | July 2024
+
+3
+
+WORLD ECONOMIC OUTLOOK UPDATE, JULY 2024
+
+The risk of elevated inflation has raised the prospects of higher-for-even-longer interest rates, which in
+turn increases external, fiscal, and financial risks. Prolonged dollar appreciation arising from rate
+disparities could disrupt capital flows and impede planned monetary policy easing, which could
+adversely impact growth. Persistently high interest rates could raise borrowing costs further and affect
+financial stability if fiscal improvements do not offset higher real rates amid lower potential growth
+(see IMF Blog).
+The potential for significant swings in economic policy as a result of elections this year, with negative
+spillovers to the rest of the world, has increased the uncertainty around the baseline. These potential
+shifts entail fiscal profligacy risks that will worsen debt dynamics, adversely affecting long-term yields
+and ratcheting up protectionism. Trade tariffs, alongside a scaling up of industrial policies worldwide,
+can generate damaging cross‐border spillovers, as well as trigger retaliation, resulting in a costly race
+to the bottom. By contrast, policies that promote multilateralism and a faster implementation of
+macrostructural reforms could boost supply gains, productivity, and growth, with positive spillovers
+worldwide.
+Future-Proofing the Economy
+As output gaps start to close and inflation recedes, policymakers face two tasks: persevering with
+restoring price stability and addressing the legacies of recent crises, including replenishing lost buffers
+and durably uplifting growth. In the near term, this will require careful calibration and sequencing of
+the policy mix. In countries where upside risks to inflation—including those arising through external
+channels—have materialized, central banks should refrain from easing too early and remain open to
+further tightening should it become necessary. Where inflation data encouragingly signal a durable
+return to price stability, monetary policy easing should proceed gradually, which would
+simultaneously provide room for the required fiscal consolidation to take place. Fiscal slippages over
+the past year in some countries could require a stance significantly tighter than envisaged. As the
+space for fiscal maneuver narrows, commitments to achieving fiscal consolidation targets should be
+earnestly adhered to, aided by sound fiscal frameworks and resource mobilization (see Chapter 1 of
+the April 2024 Fiscal Monitor).
+In emerging market and developing economies, recent policy divergences highlight the need to
+manage the risks of currency and capital flow volatility. Given that economic fundamentals remain
+the main factor in dollar appreciation, the appropriate response is to allow the exchange rate to
+adjust, while using monetary policy to keep inflation close to target. Foreign reserves should be used
+prudently and preserved to deal with potentially worse outflows in the future, in line with the IMF’s
+Integrated Policy Framework. To the extent possible, macroprudential policies should mitigate
+vulnerabilities from large exposures to foreign-currency-denominated debt.
+Near-term challenges aside, policymakers must act now to revitalize declining medium-term growth
+prospects. Striking differences in productivity trends across countries since the pandemic suggest that
+not all factors are cyclical and that decisive policy action is needed to enhance business dynamism and
+reduce resource misallocation to arrest weaknesses (see Chapter 3 of the April 2024 WEO). Further
+boosting labor supply, especially by better integrating women and immigrants—key segments
+contributing to economic resilience in advanced economies—will mitigate demographic pressures,
+adding to potential growth gains. While emigration of the young and educated population can take a
+toll on source countries, the costs can be mitigated. Policies that help leverage diaspora networks,
+maximize the benefits from remittances, and expand domestic labor market opportunities are
+4
+
+International Monetary Fund | July 2024
+
+WORLD ECONOMIC OUTLOOK UPDATE, JULY 2024
+
+possible avenues (see Chapter 4 of the October 2016 WEO).
+Finally, the misuse of inward and domestically oriented policies compromises the ability to tackle
+global challenges—such as climate change—in regard to which multilateral cooperation and trade are
+vital. These policies are also often inadequate to address domestic issues, as they increase fiscal
+pressures and risk further distortions such as resource misallocation. All countries should thus scale
+back on use of trade-distorting measures and strive instead to strengthen the multilateral trading
+system.
+Table 1. Overview of the World Economic Outlook Projections
+(Percent change, unless noted otherwise)
+Year over Year
+Projections
+2024
+2025
+
+Difference from April 2024 WEO
+Projections 1/
+2024
+2025
+
+Q4 over Q4 2/
+Projections
+2023
+2024
+2025
+
+2022
+
+2023
+
+World Output
+
+3.5
+
+3.3
+
+3.2
+
+3.3
+
+0.0
+
+0.1
+
+3.3
+
+3.2
+
+3.2
+
+Advanced Economies
+United States
+Euro Area
+Germany
+France
+Italy
+Spain
+Japan
+United Kingdom
+Canada
+Other Advanced Economies 3/
+
+2.6
+1.9
+3.4
+1.8
+2.6
+4.0
+5.8
+1.0
+4.3
+3.8
+2.7
+
+1.7
+2.5
+0.5
+–0.2
+1.1
+0.9
+2.5
+1.9
+0.1
+1.2
+1.8
+
+1.7
+2.6
+0.9
+0.2
+0.9
+0.7
+2.4
+0.7
+0.7
+1.3
+2.0
+
+1.8
+1.9
+1.5
+1.3
+1.3
+0.9
+2.1
+1.0
+1.5
+2.4
+2.2
+
+0.0
+–0.1
+0.1
+0.0
+0.2
+0.0
+0.5
+–0.2
+0.2
+0.1
+0.0
+
+0.0
+0.0
+0.0
+0.0
+–0.1
+0.2
+0.0
+0.0
+0.0
+0.1
+–0.2
+
+1.7
+3.1
+0.2
+–0.2
+1.2
+0.7
+2.1
+1.2
+–0.2
+1.0
+1.7
+
+1.8
+2.0
+1.5
+0.8
+0.8
+0.5
+2.3
+1.6
+1.5
+2.2
+1.9
+
+1.8
+1.8
+1.5
+1.7
+1.5
+1.3
+2.1
+0.3
+1.6
+2.2
+2.8
+
+Emerging Market and Developing Economies
+Emerging and Developing Asia
+China
+India 4/
+Emerging and Developing Europe
+Russia
+Latin America and the Caribbean
+Brazil
+Mexico
+Middle East and Central Asia
+Saudi Arabia
+Sub-Saharan Africa
+Nigeria
+South Africa
+
+4.1
+4.4
+3.0
+7.0
+1.2
+–1.2
+4.2
+3.0
+3.7
+5.4
+7.5
+4.0
+3.3
+1.9
+
+4.4
+5.7
+5.2
+8.2
+3.2
+3.6
+2.3
+2.9
+3.2
+2.0
+–0.8
+3.4
+2.9
+0.7
+
+4.3
+5.4
+5.0
+7.0
+3.2
+3.2
+1.9
+2.1
+2.2
+2.4
+1.7
+3.7
+3.1
+0.9
+
+4.3
+5.1
+4.5
+6.5
+2.6
+1.5
+2.7
+2.4
+1.6
+4.0
+4.7
+4.1
+3.0
+1.2
+
+0.1
+0.2
+0.4
+0.2
+0.1
+0.0
+–0.1
+–0.1
+–0.2
+–0.4
+–0.9
+–0.1
+–0.2
+0.0
+
+0.1
+0.2
+0.4
+0.0
+–0.2
+–0.3
+0.2
+0.3
+0.2
+–0.2
+–1.3
+0.1
+0.0
+0.0
+
+4.7
+5.9
+5.4
+7.8
+4.1
+4.8
+1.5
+2.2
+2.3
+...
+–4.3
+...
+2.8
+1.3
+
+4.3
+5.3
+4.6
+6.5
+2.3
+1.8
+2.5
+2.9
+3.0
+...
+2.6
+...
+3.3
+1.3
+
+4.4
+5.0
+4.9
+6.5
+3.7
+1.7
+2.5
+2.0
+1.1
+...
+4.3
+...
+2.7
+0.9
+
+Memorandum
+World Growth Based on Market Exchange Rates
+European Union
+ASEAN-5 5/
+Middle East and North Africa
+Emerging Market and Middle-Income Economies
+Low-Income Developing Countries
+
+3.0
+3.7
+5.5
+5.4
+4.0
+4.2
+
+2.7
+0.6
+4.1
+1.8
+4.4
+3.9
+
+2.7
+1.2
+4.5
+2.2
+4.2
+4.4
+
+2.8
+1.8
+4.6
+4.0
+4.2
+5.3
+
+0.0
+0.1
+0.0
+–0.5
+0.1
+–0.3
+
+0.1
+0.0
+0.0
+–0.2
+0.1
+0.1
+
+2.8
+0.5
+4.2
+...
+4.7
+...
+
+2.7
+1.7
+5.5
+...
+4.3
+...
+
+2.8
+1.8
+2.9
+...
+4.4
+...
+
+World Trade Volume (goods and services) 6/
+Advanced Economies
+Emerging Market and Developing Economies
+
+5.6
+6.2
+4.5
+
+0.8
+0.1
+2.0
+
+3.1
+2.5
+4.2
+
+3.4
+2.8
+4.5
+
+0.1
+0.3
+–0.1
+
+0.1
+–0.1
+0.5
+
+...
+...
+...
+
+...
+...
+...
+
+...
+...
+...
+
+39.2
+7.9
+8.7
+7.3
+9.8
+
+–16.4
+–5.7
+6.7
+4.6
+8.3
+
+0.8
+5.0
+5.9
+2.7
+8.2
+
+–6.0
+1.6
+4.4
+2.1
+6.0
+
+3.3
+4.9
+0.0
+0.1
+–0.1
+
+0.3
+2.0
+–0.1
+0.1
+–0.2
+
+–4.4
+–0.2
+
+–2.4
+7.7
+
+–5.7
+0.5
+
+5.8
+3.1
+8.0
+
+5.5
+2.5
+8.0
+
+3.6
+1.9
+4.9
+
+Commodity Prices
+Oil 7/
+Nonfuel (average based on world commodity import weights)
+World Consumer Prices 8/
+Advanced Economies 9/
+Emerging Market and Developing Economies 8/
+
+Note: Real effective exchange rates are assumed to remain constant at the levels prevailing during April 22–May 20, 2024. Economies are listed on the basis of economic size. The aggregated quarterly data are seasonally adjusted. WEO
+= World Economic Outlook .
+1/ Difference based on rounded figures for the current and April 2024 WEO forecasts. Countries for which forecasts have been updated relative to April 2024 WEO forecasts account for approximately 90 percent of world GDP measured at
+purchasing-power-parity weights.
+2/ For World Output (Emerging Market and Developing Economies), the quarterly estimates and projections account for approximately 90 percent (80 percent) of annual world (emerging market and developing economies) output at
+purchasing-power-parity weights.
+3/ Excludes the Group of Seven (Canada, France, Germany, Italy, Japan, United Kingdom, United States) and euro area countries.
+4/ For India, data and projections are presented on a fiscal year (FY) basis, with FY 2022/23 (starting in April 2022) shown in the 2022 column. India's growth projections are 7.3 percent in 2024 and 6.5 percent in 2025 based on
+calendar year.
+5/ Indonesia, Malaysia, Philippines, Singapore, Thailand.
+6/ Simple average of growth rates for export and import volumes (goods and services).
+7/ Simple average of prices of UK Brent, Dubai Fateh, and West Texas Intermediate crude oil. The average assumed price of oil in US dollars a barrel, based on futures markets (as of May 20, 2024), is $81.26 in 2024 and $76.38 in
+2025.
+8/ Excludes Venezuela.
+9/ The assumed inflation rate for the euro area is 2.4% in 2024 and 2.1% in 2025, that for Japan is 2.4% in 2024 and 2.0% in 2025, and that for the United States is 3.1% in 2024 and 2.0% in 2025.
+
+International Monetary Fund | July 2024
+
+5
+
+JUL
+2024
+
+Box 1. GLOBAL FINANCIAL STABILITY UPDATE
+
+Dec. 24
+
+Nov. 24
+
+Oct. 24
+
+Sep. 24
+
+Aug. 24
+
+Jul. 24
+
+Jun. 24
+
+Persistently elevated uncertainty around the inflation outlook
+1.1. Market-Implied Policy Rates
+has led central banks in major advanced economies to become Figure
+(Percent)
+somewhat more cautious about the pace of policy easing,
+US – latest
+US – April
+compared with their positions at the end of the first quarter.
+EA – latest
+EA – April
+5.5
+Consequently, markets’ expectations of the number of policy rate
+5.0
+cuts to be delivered in 2024 have been revised downward (Figure
+4.5
+1.1).1 Longer-term yields have generally moved in tandem with
+4.0
+repricing of policy paths. In the US, however, medium- to long3.5
+term yields have remained unchanged, on net, since April. Over this 3.0
+period, these yields have seen transitory bouts of upward pressure
+2.5
+exerted via moves in real rates, a consequence of, in part,
+fluctuations in demand for Treasuries, given structural shifts in the
+Treasuries market’s investor base (see the April 2024 Global Financial Sources: Bloomberg L.P.; and IMF staff calculations.
+“April” refers to April 1, 2024. The European Central Bank announced a policy rate
+Stability Report). That said, uncertainty around the path of long-term Note:
+cut on June 5, 2024. EA = euro area.
+2
+US real rates—measured by the level of the real risk premium —
+remains elevated compared with the historical average. Developments in interest rates have also led to gyrations
+of the exchange rate for the US dollar against major advanced economy currencies since April. The Japanese yen
+has seen sustained depreciation pressures against the dollar over this period, characterized by excessive moves in
+the currency and subsequent market interventions by the authorities.
+Emerging market economies have been resilient overall, although the performance of emerging market
+currencies has varied some. Broadly speaking, emerging market currencies have been subject to depreciation
+pressures.3 Furthermore, emerging markets have experienced net capital outflows4 since April, while showing
+some sensitivity to changes in expectations for the US policy path. Even as international sovereign bond issuance
+has slowed, a few frontier markets have been prefinancing redemptions due in the next quarter despite elevated
+financing costs to mitigate the much-anticipated refinancing risk.
+
+Mar. 24
+
+Sep. 23
+
+Mar. 23
+
+Sep. 22
+
+1.5
+1.0
+0.5
+0.0
+-0.5
+-1.0
+-1.5
+
+Mar. 22
+
+United States
+Euro area
+Other advanced economies
+China
+Apr. 2024
+GFSR
+Emerging markets excluding China
+
+Sep. 21
+
+Overall, buoyant corporate valuations have kept financial
+conditions accommodative (Figure 1.2). However, a slower pace
+of policy easing in the US and other advanced economies, amid
+continued uncertainty around the global economic outlook, could
+exacerbate financial market volatility and challenge these valuations.
+In addition, emerging market currencies may come under further
+pressure with narrowing of interest rate differentials against the US.
+
+Figure 1.2. Financial Conditions Index
+(Number of standard deviations from the mean)
+
+Mar. 21
+
+Risk assets have appreciated from elevated levels of the first
+quarter, driven in part by resilient corporates. Solid corporate
+profits have driven valuations in US and euro area equities higher, as
+companies in most sectors have posted upside earnings surprises.
+Equity valuations in major emerging markets have been mixed,
+while corporate spreads continue to remain tight across most
+regions.
+
+Sources: Bloomberg Finance L.P.; Haver Analytics; national data sources; and IMF staff
+calculations.
+Note: GFSR = Global Financial Stability Report.
+
+This box was prepared by the Monetary and Capital Markets Department’s Global Markets Analysis division. It provides an update on market
+developments since the April 2024 Global Financial Stability Report.
+1 A cut is assumed to be of the magnitude of 25 basis points.
+2 The real risk premium component of real rates reflects the compensation investors require for bearing uncertainty around the future path of
+interest rates and economic outlook (see the October 2023 Global Financial Stability Report for more details; see also Tobias Adrian, Vitor Gaspar,
+and Pierre-Olivier Gourinchas, “The Fiscal and Financial Risks of a High-Debt, Slow-Growth World,” IMF Blog, March 28, 2024).
+3 Currencies of some emerging markets with relatively more robust economic outlooks, or of those exporting commodities like copper that are
+used in hardware enabling artificial intelligence technology, have been able to offset depreciation pressures.
+4 A narrow definition of capital flows is used here, restricted to portfolio flows only, owing to lags in official data availability.
+
+6
+
+International Monetary Fund | July 2024
+
+JUL
+2024
+
+WORLD ECONOMIC OUTLOOK UPDATE: ANNEX
+
+2024
+Selected Economies Real GDP Growth
+(Percent change)
+
+Argentina
+Australia
+Brazil
+Canada
+China
+Egypt 2/
+France
+Germany
+India 2/
+Indonesia
+Iran 2/
+Italy
+Japan
+Kazakhstan
+Korea
+Malaysia
+Mexico
+Netherlands
+Nigeria
+Pakistan 2/
+Philippines
+Poland
+Russia
+Saudi Arabia
+South Africa
+Spain
+Thailand
+Türkiye
+United Kingdom
+United States
+
+2022
+
+2023
+
+Projections
+2024
+2025
+
+5.0
+3.9
+3.0
+3.8
+3.0
+6.7
+2.6
+1.8
+7.0
+5.3
+3.8
+4.0
+1.0
+3.3
+2.6
+8.9
+3.7
+4.3
+3.3
+6.2
+7.6
+5.6
+–1.2
+7.5
+1.9
+5.8
+2.5
+5.5
+4.3
+1.9
+
+–1.6
+2.0
+2.9
+1.2
+5.2
+3.8
+1.1
+–0.2
+8.2
+5.0
+4.6
+0.9
+1.9
+5.1
+1.4
+3.6
+3.2
+0.1
+2.9
+–0.2
+5.5
+0.2
+3.6
+–0.8
+0.7
+2.5
+1.9
+4.5
+0.1
+2.5
+
+–3.5
+1.4
+2.1
+1.3
+5.0
+2.7
+0.9
+0.2
+7.0
+5.0
+3.3
+0.7
+0.7
+3.5
+2.5
+4.4
+2.2
+0.7
+3.1
+2.0
+6.0
+3.1
+3.2
+1.7
+0.9
+2.4
+2.9
+3.6
+0.7
+2.6
+
+Difference from April 2024
+WEO Projections 1/
+2024
+2025
+
+5.0
+2.0
+2.4
+2.4
+4.5
+4.1
+1.3
+1.3
+6.5
+5.1
+3.1
+0.9
+1.0
+4.6
+2.2
+4.4
+1.6
+1.5
+3.0
+3.5
+6.2
+3.5
+1.5
+4.7
+1.2
+2.1
+3.1
+2.7
+1.5
+1.9
+
+–0.7
+–0.1
+–0.1
+0.1
+0.4
+–0.3
+0.2
+0.0
+0.2
+0.0
+0.0
+0.0
+–0.2
+0.4
+0.2
+0.0
+–0.2
+0.1
+–0.2
+0.0
+–0.2
+0.0
+0.0
+–0.9
+0.0
+0.5
+0.2
+0.5
+0.2
+–0.1
+
+0.0
+0.0
+0.3
+0.1
+0.4
+–0.3
+–0.1
+0.0
+0.0
+0.0
+0.0
+0.2
+0.0
+–1.0
+–0.1
+0.0
+0.2
+0.2
+0.0
+0.0
+0.0
+0.0
+–0.3
+–1.3
+0.0
+0.0
+0.2
+–0.5
+0.0
+0.0
+
+Source: IMF staff calculations.
+Note: The selected economies account for approximately 83 percent of world output.
+1/ Difference based on rounded figures for the current and April 2024 WEO forecasts.
+2/ Data and forecasts are presented on a fiscal year basis.
+
+International Monetary Fund | July 2024
+ISBN: 9798400278235
+
+1
+
+
