@@ -29,7 +29,10 @@ def load_env(env_path: Path = Path(".env")) -> None:
             continue
         key, val = line.split("=", 1)
         val = val.strip().strip('"').strip("'")
-        os.environ[key.strip()] = val
+        key = key.strip()
+        if key in os.environ:
+            continue  # preserve already-set env (CLI overrides)
+        os.environ[key] = val
 
 
 def http_post_json(url: str, headers: dict, payload: dict, timeout: int = 60) -> dict:

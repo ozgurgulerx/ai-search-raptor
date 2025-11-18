@@ -33,7 +33,10 @@ def load_env(env_path: Path = Path(".env")) -> None:
             continue
         key, val = line.split("=", 1)
         val = val.strip().strip('"').strip("'")
-        os.environ[key.strip()] = val
+        key = key.strip()
+        if key in os.environ:
+            continue  # preserve existing env (CLI overrides)
+        os.environ[key] = val
 
 
 def resolve_imf_text_path() -> Path:

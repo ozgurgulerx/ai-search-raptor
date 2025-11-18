@@ -13,7 +13,7 @@ Schema (same as ingest_raptor.py):
 Env:
   - AZURE_OPENAI_ENDPOINT, AZURE_OPENAI_API_KEY, AZURE_OPENAI_API_VERSION (default 2024-12-01-preview)
   - AZURE_TEXT_EMBEDDING_DEPLOYMENT_NAME
-  - AZURE_OPENAI_DEPLOYMENT_NAME (or AZURE_OPENAI_REASONING_DEPLOYMENT_NAME)
+  - AZURE_OPENAI_DEPLOYMENT_NAME
   - AZURE_SEARCH_ENDPOINT, AZURE_SEARCH_ADMIN_KEY (or AZURE_SEARCH_KEY)
   - RAPTOR_INDEX (or AZURE_SEARCH_INDEX_NAME) optional, default: raptor-index
 """
@@ -41,7 +41,10 @@ def load_env(env_path: Path = Path(".env")) -> None:
             continue
         key, val = line.split("=", 1)
         val = val.strip().strip('"').strip("'")
-        os.environ[key.strip()] = val
+        key = key.strip()
+        if key in os.environ:
+            continue  # keep existing env (e.g., overriden via CLI)
+        os.environ[key] = val
 
 
 def resolve_imf_text_path() -> Path:
@@ -122,7 +125,7 @@ def chat_summarize(text: str, *, endpoint: str, deployment: str, api_key: str, a
             {"role": "user", "content": prompt},
         ],
         "model": deployment,
-        "max_completion_tokens": 400,
+        "max_completion_tokens": 1200,
     }
     resp = http_post_json(url, headers, payload, timeout=60)
     choices = resp.get("choices") or []
@@ -234,7 +237,7 @@ def main() -> None:
     load_env()
 
     embed_deploy = os.getenv("AZURE_TEXT_EMBEDDING_DEPLOYMENT_NAME")
-    chat_deploy = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME") or os.getenv("AZURE_OPENAI_REASONING_DEPLOYMENT_NAME")
+    chat_deploy = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME")
     aoai_endpoint = (os.getenv("AZURE_OPENAI_ENDPOINT") or "").rstrip("/")
     aoai_key = os.getenv("AZURE_OPENAI_API_KEY")
     aoai_version = os.getenv("AZURE_OPENAI_API_VERSION", "2024-12-01-preview")
@@ -314,7 +317,7 @@ def main() -> None:
                     unused.remove(j)
             group_indices = [seed] + neighbors
             joined = "\n\n".join(current_texts[idx]["raw"] for idx in group_indices)
-            joined = joined[:4000]
+            joined = joined[:2000]
             summary_text = chat_summarize(
                 joined,
                 endpoint=aoai_endpoint,

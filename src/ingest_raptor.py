@@ -40,7 +40,10 @@ def load_env(env_path: Path = Path(".env")) -> None:
             continue
         key, val = line.split("=", 1)
         val = val.strip().strip('"').strip("'")
-        os.environ[key.strip()] = val
+        key = key.strip()
+        if key in os.environ:
+            continue  # preserve already-set env (CLI overrides)
+        os.environ[key] = val
 
 
 def resolve_imf_text_path() -> Path:
@@ -223,8 +226,7 @@ def main() -> None:
     load_env()
 
     embed_deploy = os.getenv("AZURE_TEXT_EMBEDDING_DEPLOYMENT_NAME")
-    # Prefer standard chat deployment for summarization; fall back to reasoning if needed.
-    chat_deploy = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME") or os.getenv("AZURE_OPENAI_REASONING_DEPLOYMENT_NAME")
+    chat_deploy = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME")
     aoai_endpoint = (os.getenv("AZURE_OPENAI_ENDPOINT") or "").rstrip("/")
     aoai_key = os.getenv("AZURE_OPENAI_API_KEY")
     aoai_version = os.getenv("AZURE_OPENAI_API_VERSION", "2024-12-01-preview")

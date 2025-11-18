@@ -1,6 +1,9 @@
 # AI Search RAPTOR 🌲🔍
 
-RAPTOR on Azure AI Search for retrieval-augmented generation: hierarchical summaries over IMF World Economic Outlook reports plus a chat agent that can pull the *forest and the leaves* in one go.
+RAPTOR is a successful RAG pattern that tries to mitigate the fragmentation problem in RAG. 
+This is when you have a very large document corpus, which causes RAG performance challanges when a flat vector index is used.
+For more on RAPTOR go here...
+
 
 ## Highlights
 - 🌲 **RAPTOR index on Azure AI Search** with `level` + `kind` fields so you can target summaries or leaves per query.
@@ -19,14 +22,14 @@ RAPTOR on Azure AI Search for retrieval-augmented generation: hierarchical summa
 
 ## Architecture (at a glance)
 ```mermaid
-flowchart LR
-    A[IMF PDFs/text] --> B[Clean & chunk\n~400 words, 80 overlap]
-    B --> C[Embed (Azure OpenAI)]
-    C --> D[Level 0 chunks\nuploaded to Azure AI Search]
+graph LR
+    A[IMF PDFs/text] --> B[Clean & chunk<br/>~400 words, 80 overlap]
+    B --> C[Embed via Azure OpenAI]
+    C --> D[Level 0 chunks<br/>uploaded to Azure AI Search]
     D --> E[Cluster/group + LLM summarize]
-    E --> F[Embed summaries\nlevel 1..N]
-    F --> G[(RAPTOR index\nfields: id, level, kind, raw, contentVector)]
-    G --> H[Hybrid search + chat agent\ncitations shown inline]
+    E --> F[Embed summaries<br/>level 1..N]
+    F --> G[(RAPTOR index<br/>fields: id, level, kind, raw, contentVector)]
+    G --> H[Hybrid search + chat agent<br/>citations shown inline]
 ```
 
 ## Repository map
