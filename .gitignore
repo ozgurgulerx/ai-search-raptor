@@ -9,9 +9,12 @@ __pycache__/
 *.pyo
 *.pyd
 .Python
+
+# Virtual environments
 .venv/
 .venv*/
 venv/
+venv*/
 pip-wheel-metadata/
 *.egg-info/
 dist/
