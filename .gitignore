@@ -1,0 +1,35 @@
+# Environments and secrets
+.env
+.env.*
+!.env.example
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.venv/
+.venv*/
+venv/
+pip-wheel-metadata/
+*.egg-info/
+dist/
+build/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Editors and OS
+.DS_Store
+.idea/
+.vscode/
+
+# Data and model outputs
+data/
+!data/.gitkeep
+
+# Logs and temp
+*.log
+*.tmp
+*.bak
