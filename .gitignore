@@ -28,6 +28,7 @@ build/
 # Data and model outputs
 data/
 !data/.gitkeep
+docu/
 
 # Logs and temp
 *.log
