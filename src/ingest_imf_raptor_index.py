@@ -325,9 +325,13 @@ def main() -> None:
     if not all([embed_deploy, chat_deploy, aoai_endpoint, aoai_key, search_endpoint, search_key]):
         sys.exit("❌ Missing Azure env vars. Check .env.")
 
-    pdf_files = sorted(Path(".").glob("IMF_*.pdf"))
+    data_dir = Path("data")
+    if not data_dir.exists():
+        sys.exit("❌ data/ directory not found.")
+
+    pdf_files = sorted(data_dir.glob("IMF_*.pdf"))
     if not pdf_files:
-        sys.exit("❌ No IMF_*.pdf files found.")
+        sys.exit("❌ No IMF_*.pdf files found under data/.")
 
     ensure_index(search_endpoint=search_endpoint, admin_key=search_key, index_name=index_name, dims=1536)
     print(f"🏗️  Index ensured: {index_name}")

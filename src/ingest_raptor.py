@@ -2,7 +2,8 @@
 """
 ingest_raptor.py
 ────────────────
-Build a RAPTOR-style hierarchical index in Azure AI Search from IMF_outlook_oct25.txt.
+Build a RAPTOR-style hierarchical index in Azure AI Search from IMF outlook text
+stored under data/ (e.g., data/IMF_2510.txt).
 
 Flow:
 1) Clean text (same rules as baseline ingest).
@@ -40,6 +41,28 @@ def load_env(env_path: Path = Path(".env")) -> None:
         key, val = line.split("=", 1)
         val = val.strip().strip('"').strip("'")
         os.environ[key.strip()] = val
+
+
+def resolve_imf_text_path() -> Path:
+    """Locate the IMF outlook text file: prefer IMF_TEXT_PATH env, else latest IMF_*.txt under data/, else legacy path."""
+    env_path = os.getenv("IMF_TEXT_PATH")
+    if env_path:
+        p = Path(env_path)
+        if p.exists():
+            return p
+        sys.exit(f"❌ IMF_TEXT_PATH={env_path} not found.")
+
+    data_dir = Path("data")
+    if data_dir.exists():
+        candidates = sorted(data_dir.glob("IMF_*.txt"))
+        if candidates:
+            return candidates[-1]
+
+    legacy = Path("IMF_outlook_oct25.txt")
+    if legacy.exists():
+        return legacy
+
+    sys.exit("❌ No IMF text found. Place IMF_*.txt under data/ or set IMF_TEXT_PATH.")
 
 
 # ── HTTP helpers ───────────────────────────────────────────────────
@@ -213,9 +236,7 @@ def main() -> None:
     if not all([embed_deploy, chat_deploy, aoai_endpoint, aoai_key, search_endpoint, search_key]):
         sys.exit("❌ Missing Azure env vars. Check .env.")
 
-    raw_path = Path("IMF_outlook_oct25.txt")
-    if not raw_path.exists():
-        sys.exit("❌ IMF_outlook_oct25.txt not found. Run pdftotext first.")
+    raw_path = resolve_imf_text_path()
 
     print(f"✅ Config loaded; index={index_name}, embed={embed_deploy}, chat={chat_deploy}")
 

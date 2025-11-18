@@ -2,7 +2,8 @@
 """
 ingest_imf_outlook.py
 ─────────────────────
-Clean, chunk, embed, and upload IMF_outlook_oct25 content to Azure AI Search.
+Clean, chunk, embed, and upload IMF outlook content to Azure AI Search.
+Looks for IMF_*.txt under data/ (latest by name) unless IMF_TEXT_PATH is set.
 
 Dependencies: standard library only (no external pip installs needed).
 Relies on Azure OpenAI + Azure AI Search credentials in .env.
@@ -33,6 +34,28 @@ def load_env(env_path: Path = Path(".env")) -> None:
         key, val = line.split("=", 1)
         val = val.strip().strip('"').strip("'")
         os.environ[key.strip()] = val
+
+
+def resolve_imf_text_path() -> Path:
+    """Locate the IMF outlook text file: prefer IMF_TEXT_PATH env, else latest IMF_*.txt under data/, else legacy path."""
+    env_path = os.getenv("IMF_TEXT_PATH")
+    if env_path:
+        p = Path(env_path)
+        if p.exists():
+            return p
+        sys.exit(f"❌ IMF_TEXT_PATH={env_path} not found.")
+
+    data_dir = Path("data")
+    if data_dir.exists():
+        candidates = sorted(data_dir.glob("IMF_*.txt"))
+        if candidates:
+            return candidates[-1]
+
+    legacy = Path("IMF_outlook_oct25.txt")
+    if legacy.exists():
+        return legacy
+
+    sys.exit("❌ No IMF text found. Place IMF_*.txt under data/ or set IMF_TEXT_PATH.")
 
 
 # ── helpers ─────────────────────────────────────────────────────────
@@ -170,9 +193,7 @@ def main() -> None:
     print(f"✅ Config loaded; index={index_name}, embed={embed_deploy}")
 
     # read + clean
-    raw_path = Path("IMF_outlook_oct25.txt")
-    if not raw_path.exists():
-        sys.exit(f"❌ {raw_path} not found. Run pdftotext first.")
+    raw_path = resolve_imf_text_path()
     raw_text = raw_path.read_text(encoding="utf-8", errors="ignore")
     cleaned = clean_text(raw_text)
     print(f"🔍 Cleaned text length: {len(cleaned):,} chars")
