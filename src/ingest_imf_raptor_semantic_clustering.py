@@ -1,20 +1,21 @@
 #!/usr/bin/env -S .venv/bin/python
 """
-ingest_raptor.py
-────────────────
+ingest_raptor_semantic_clustering.py
+────────────────────────────────────
 Build a RAPTOR-style hierarchical index in Azure AI Search from IMF outlook text
-stored under data/ (e.g., data/IMF_2510.txt).
+stored under data/ (e.g., data/IMF_2510.txt), using semantic clustering (greedy
+nearest-neighbor grouping in embedding space) at each level instead of fixed
+contiguous grouping.
 
-Flow:
-1) Clean text (same rules as baseline ingest).
-2) Chunk into ~400-word windows (80-word overlap) and embed with Azure OpenAI.
-3) Upload base chunks to Search (level=0) with vectors.
-4) Iteratively summarize groups of chunks with Azure OpenAI chat, embed summaries, and
-   upload higher-level nodes (level=1,2,…) until a single root summary is produced.
+Schema (same as ingest_raptor.py):
+  - id (key), level (filterable/facetable), kind ("chunk"|"summary"), raw (searchable), contentVector (vector)
 
-Index name: defaults to RAPTOR_INDEX env or "raptor-index".
-Credentials: uses .env (AZURE_OPENAI_*, AZURE_TEXT_EMBEDDING_DEPLOYMENT_NAME,
-             AZURE_SEARCH_ENDPOINT, AZURE_SEARCH_ADMIN_KEY/KEY, AZURE_SEARCH_INDEX_NAME optional).
+Env:
+  - AZURE_OPENAI_ENDPOINT, AZURE_OPENAI_API_KEY, AZURE_OPENAI_API_VERSION (default 2024-12-01-preview)
+  - AZURE_TEXT_EMBEDDING_DEPLOYMENT_NAME
+  - AZURE_OPENAI_DEPLOYMENT_NAME
+  - AZURE_SEARCH_ENDPOINT, AZURE_SEARCH_ADMIN_KEY (or AZURE_SEARCH_KEY)
+  - RAPTOR_INDEX (or AZURE_SEARCH_INDEX_NAME) optional, default: raptor-index
 """
 
 from __future__ import annotations
@@ -42,7 +43,7 @@ def load_env(env_path: Path = Path(".env")) -> None:
         val = val.strip().strip('"').strip("'")
         key = key.strip()
         if key in os.environ:
-            continue  # preserve already-set env (CLI overrides)
+            continue  # keep existing env (e.g., overriden via CLI)
         os.environ[key] = val
 
 
@@ -113,27 +114,46 @@ def chat_summarize(text: str, *, endpoint: str, deployment: str, api_key: str, a
     """Summarize text into a short, high-signal paragraph."""
     url = f"{endpoint}/openai/deployments/{deployment}/chat/completions?api-version={urllib.parse.quote(api_version)}"
     headers = {"Content-Type": "application/json", "api-key": api_key}
-    prompt = (
+    def call(payload: dict) -> str:
+        resp = http_post_json(url, headers, payload, timeout=60)
+        choices = resp.get("choices") or []
+        if not choices:
+            raise RuntimeError(f"No choices in summary response: {resp}")
+        summary = choices[0].get("message", {}).get("content", "")
+        if not summary:
+            raise RuntimeError(f"No content in summary response: {resp}")
+        return summary.strip()
+
+    base_prompt = (
         "Summarize the following content into a concise paragraph capturing the key points. "
         "Keep it under 120 words.\n\n"
-        f"{text}"
     )
+
     payload = {
         "messages": [
             {"role": "system", "content": "You are a concise summarizer."},
-            {"role": "user", "content": prompt},
+            {"role": "user", "content": base_prompt + text},
         ],
         "model": deployment,
-        "max_completion_tokens": 200,
     }
-    resp = http_post_json(url, headers, payload, timeout=60)
-    choices = resp.get("choices") or []
-    if not choices:
-        raise RuntimeError(f"No choices in summary response: {resp}")
-    summary = choices[0].get("message", {}).get("content", "")
-    if not summary:
-        raise RuntimeError(f"No content in summary response: {resp}")
-    return summary.strip()
+
+    try:
+        return call(payload)
+    except Exception:
+        # Retry once with stricter truncation and fewer tokens if the model failed or returned empty.
+        payload["messages"][1]["content"] = base_prompt + text[:1200]
+        payload.pop("max_completion_tokens", None)
+        return call(payload)
+
+
+# ── vector helpers ──────────────────────────────────────────────────
+def l2_normalize(vec: List[float]) -> List[float]:
+    s = sum(x * x for x in vec) ** 0.5 or 1.0
+    return [x / s for x in vec]
+
+
+def dot(a: List[float], b: List[float]) -> float:
+    return sum(x * y for x, y in zip(a, b))
 
 
 def ensure_index(*, search_endpoint: str, admin_key: str, index_name: str, dims: int = 1536) -> None:
@@ -253,13 +273,15 @@ def main() -> None:
     ensure_index(search_endpoint=search_endpoint, admin_key=search_key, index_name=index_name, dims=1536)
     print("🏗️  Index ensured/updated.")
 
-    # upload base chunks
+    # upload base chunks and collect embeddings
     EMB_BATCH = 16
     UPL_BATCH = 100
     docs: List[dict] = []
+    base_vecs: List[List[float]] = []
     for i in range(0, len(base_chunks), EMB_BATCH):
         batch = base_chunks[i : i + EMB_BATCH]
         embs = embed_batch(batch, endpoint=aoai_endpoint, deployment=embed_deploy, api_key=aoai_key, api_version=aoai_version)
+        base_vecs.extend(embs)
         for j, (txt, emb) in enumerate(zip(batch, embs)):
             docs.append({
                 "@search.action": "upload",
@@ -277,23 +299,47 @@ def main() -> None:
         upload_documents(docs, search_endpoint=search_endpoint, admin_key=search_key, index_name=index_name)
         print(f"⬆️  Uploaded final {len(docs)} base docs.")
 
-    # iterative summaries
+    # iterative summaries (semantic clustering)
     current_texts = [{"id": f"raptor_c{i:06d}", "raw": txt} for i, txt in enumerate(base_chunks)]
+    current_vecs = [l2_normalize(v) for v in base_vecs]
     level = 1
     GROUP_SIZE = 5
-    make_id = lambda n: f"raptor_s{level}_{n:05d}"
 
     while len(current_texts) > 1:
         summaries: List[dict] = []
-        for g_idx in range(0, len(current_texts), GROUP_SIZE):
-            group = current_texts[g_idx : g_idx + GROUP_SIZE]
-            joined = "\n\n".join(item["raw"] for item in group)
-            joined = joined[:4000]  # keep prompt small for stable summaries
-            summary = chat_summarize(joined, endpoint=aoai_endpoint, deployment=chat_deploy, api_key=aoai_key, api_version=aoai_version)
-            summaries.append({"id": make_id(g_idx // GROUP_SIZE), "raw": summary})
+        # greedy semantic grouping by cosine similarity
+        unused = set(range(len(current_texts)))
+        group_count = 0
+        while unused:
+            # deterministic seed for reproducibility
+            seed = min(unused)
+            unused.remove(seed)
+            # pick nearest neighbors among remaining
+            if not unused:
+                neighbors = []
+            else:
+                sims = [(j, dot(current_vecs[seed], current_vecs[j])) for j in unused]
+                sims.sort(key=lambda x: x[1], reverse=True)
+                take = min(GROUP_SIZE - 1, len(sims))
+                neighbors = [sims[k][0] for k in range(take)]
+                for j in neighbors:
+                    unused.remove(j)
+            group_indices = [seed] + neighbors
+            joined = "\n\n".join(current_texts[idx]["raw"] for idx in group_indices)
+            joined = joined[:1500]
+            summary_text = chat_summarize(
+                joined,
+                endpoint=aoai_endpoint,
+                deployment=chat_deploy,
+                api_key=aoai_key,
+                api_version=aoai_version,
+            )
+            summaries.append({"id": f"raptor_s{level}_{group_count:05d}", "raw": summary_text})
+            group_count += 1
 
         # embed + upload summaries at this level
         docs = []
+        next_vecs: List[List[float]] = []
         for i in range(0, len(summaries), EMB_BATCH):
             batch = summaries[i : i + EMB_BATCH]
             embs = embed_batch([b["raw"] for b in batch], endpoint=aoai_endpoint, deployment=embed_deploy, api_key=aoai_key, api_version=aoai_version)
@@ -306,6 +352,7 @@ def main() -> None:
                     "raw": rec["raw"],
                     "contentVector": emb,
                 })
+                next_vecs.append(l2_normalize(emb))
             if len(docs) >= UPL_BATCH:
                 upload_documents(docs, search_endpoint=search_endpoint, admin_key=search_key, index_name=index_name)
                 print(f"⬆️  Uploaded {len(docs)} summaries at level {level}")
@@ -315,9 +362,10 @@ def main() -> None:
             print(f"⬆️  Uploaded final {len(docs)} summaries at level {level}")
 
         current_texts = summaries
+        current_vecs = next_vecs
         level += 1
 
-    print(f"✅ RAPTOR ingestion complete. Levels built: {level}")
+    print(f"✅ RAPTOR ingestion (semantic clustering) complete. Levels built: {level}")
 
 
 if __name__ == "__main__":

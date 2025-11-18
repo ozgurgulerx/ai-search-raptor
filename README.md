@@ -1,4 +1,4 @@
-# AI Search RAPTOR 🌲🔍
+#RAPTOR on Azure AI Search 🌲🔍
 
 RAPTOR is a successful RAG pattern that tries to mitigate the fragmentation problem in RAG. 
 This is when you have a very large document corpus, which causes RAG performance challanges when a flat vector index is used.
