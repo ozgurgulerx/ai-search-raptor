@@ -112,6 +112,10 @@ def embed_batch(texts: List[str], *, endpoint: str, deployment: str, api_key: st
 
 def chat_summarize(text: str, *, endpoint: str, deployment: str, api_key: str, api_version: str) -> str:
     """Summarize text into a short, high-signal paragraph."""
+    def fallback_simple(t: str) -> str:
+        words = t.split()
+        return " ".join(words[:120])
+
     url = f"{endpoint}/openai/deployments/{deployment}/chat/completions?api-version={urllib.parse.quote(api_version)}"
     headers = {"Content-Type": "application/json", "api-key": api_key}
     def call(payload: dict) -> str:
@@ -149,7 +153,10 @@ def chat_summarize(text: str, *, endpoint: str, deployment: str, api_key: str, a
         # Retry once with stricter truncation and fewer tokens if the model failed or returned empty.
         payload["messages"][1]["content"] = base_prompt + text[:1200]
         payload.pop("max_completion_tokens", None)
-        return call(payload)
+        try:
+            return call(payload)
+        except Exception:
+            return fallback_simple(text)
 
 
 # ── vector helpers ──────────────────────────────────────────────────
