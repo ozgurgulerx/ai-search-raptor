@@ -26,7 +26,7 @@ graph LR
     A[IMF PDFs/text] --> B[Clean & chunk<br/>~400 words, 80 overlap]
     B --> C[Embed via Azure OpenAI]
     C --> D[Level 0 chunks<br/>uploaded to Azure AI Search]
-    D --> E[Cluster/group + LLM summarize]
+    D --> E[Group + summarize<br/>• contiguous windows<br/>• or semantic NNs]
     E --> F[Embed summaries<br/>level 1..N]
     F --> G[(RAPTOR index<br/>fields: id, level, kind, raw, contentVector)]
     G --> H[Hybrid search + chat agent<br/>citations shown inline]
